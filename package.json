@@ -7,6 +7,7 @@
     "dev": "nuxt dev --port 18467",
     "build": "nuxt build",
     "preview": "nuxt preview --port 18467",
+    "verify:chain": "tsx scripts/verify-chain.ts",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "tsx": "^4.23.15",
     "typescript": "^5.6.3",
     "vue-tsc": "^2.1.10"
   }

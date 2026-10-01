@@ -16,3 +16,41 @@ a { text-decoration: none; }
 .edit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }.edit-grid label { display: grid; gap: 6px; font-size: 12px; color: #65736f; }.detail-title { display: flex; justify-content: space-between; align-items: center; }.detail-title span { color: #74817e; font-size: 11px; }.detail-title h3 { margin: 5px 0 0; }
 .reply-list { display: grid; gap: 8px; margin: 15px 0; }.reply-list article { border-left: 3px solid #2c6757; background: #f5f8f7; padding: 11px; display: grid; grid-template-columns: 90px 120px 1fr 220px; align-items: center; gap: 8px; }.reply-list p { margin: 0; font-size: 12px; }.reply-list span { color: #74817e; font-size: 10px; }
 .decision-band { display: grid; grid-template-columns: 1fr auto auto auto; gap: 8px; align-items: center; border-top: 1px solid #dfe5e3; padding-top: 14px; }.preflight-panel { display: flex; justify-content: space-between; align-items: center; margin: 0 0 18px; border-left: 4px solid #d2a43c; }.preflight-panel span, .preflight-panel strong, .preflight-panel p { display: block; }.preflight-panel span { color: #758480; font-size: 11px; }.preflight-panel strong { margin: 5px 0; }.preflight-panel p { color: #9e3e38; font-size: 11px; margin: 3px 0; }
+
+/* 网络状态与录入端切换 */
+.link-band { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 12px; margin: 12px 0 0; border-radius: 4px; font-size: 11px; }
+.link-band .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.link-band.online { background: #15372f; color: #bfe0d4; }.link-band.online .dot { background: #5fbf93; box-shadow: 0 0 6px #5fbf93; }
+.link-band.offline { background: #4a2d17; color: #f0c8a0; }.link-band.offline .dot { background: #e08a3c; box-shadow: 0 0 6px #e08a3c; }
+.side-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 6px 0; }.side-switch button { border: 1px solid #3a5e53; background: transparent; color: #a8c0b8; padding: 6px 4px; border-radius: 3px; font-size: 11px; cursor: pointer; }.side-switch button.active { background: #d2a43c; color: #1b4338; border-color: #d2a43c; font-weight: 700; }
+.aside-state strong.alert { color: #e79a84; }
+
+/* 双端并列实测 */
+.chain-hint { font-size: 11px; color: #6d7c78; background: #f5f8f7; border-left: 3px solid #2c6757; padding: 8px 10px; margin: 10px 0; }.chain-hint i { margin-right: 5px; }
+.revision-stack { display: grid; gap: 5px; padding: 4px 0; }
+.revision { display: grid; grid-template-columns: 76px 1fr; gap: 2px 8px; padding: 6px 8px; border-radius: 3px; background: #f5f8f7; border-left: 3px solid #9db8af; font-size: 11px; align-items: center; }
+.revision.node { border-left-color: #2f6fed; background: #f2f6ff; }.revision.center { border-left-color: #6b7785; background: #f6f7f8; }
+.revision.chosen { outline: 1.5px solid #2c6757; }
+.revision strong { grid-column: 2; font-size: 11.5px; }.revision span { grid-column: 2; color: #596662; font-size: 10.5px; }.revision small { grid-column: 2; color: #8a9692; font-size: 10px; }
+.empty-hint { color: #98a4a0; font-size: 11px; margin: 2px 0; }
+.decide-cell { display: flex; gap: 5px; }
+.span2 { grid-column: 1 / -1; }
+
+/* 证书 */
+.cert-grid { grid-template-columns: 80px 1fr 120px 120px 50px auto !important; }.cert-actions { display: flex; gap: 6px; justify-content: flex-end; }
+
+/* 签署链 */
+.sign-chain-panel { background: white; border: 1px solid #dbe2e0; padding: 18px; margin-bottom: 18px; border-left: 4px solid #2c6757; }
+.sign-chain-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }.sign-chain-head span { color: #758480; font-size: 11px; }.sign-chain-head h2 { margin: 4px 0; font-size: 19px; }.sign-chain-head p { margin: 0; color: #6d7c78; font-size: 12px; }
+.sign-state { display: grid; gap: 10px; justify-items: end; }.fail-switch { display: flex; align-items: center; gap: 8px; }.fail-switch small { color: #9e3e38; font-size: 10.5px; white-space: nowrap; }
+.preflight-grid { display: grid; grid-template-columns: 1fr auto; gap: 18px; margin-top: 14px; padding: 14px; background: #f5f8f7; border-radius: 4px; align-items: center; }
+.preflight-checks strong { font-size: 14px; color: #215849; }.preflight-checks p { margin: 5px 0; font-size: 11.5px; }.preflight-checks .blocking { color: #9e3e38; }.preflight-checks .warning-line { color: #a9711a; }.preflight-checks .ok-line { color: #2c6757; }.preflight-checks i { margin-right: 6px; }
+.sign-actions { display: grid; gap: 8px; min-width: 230px; }
+.sign-record { display: grid; gap: 8px; margin-top: 14px; padding: 12px 14px; border: 1px solid #dbe2e0; border-radius: 4px; background: #fbfcfb; }.sign-record > div { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }.sign-record small { color: #758480; font-size: 10.5px; }.stale-reasons { margin: 0; padding-left: 22px; color: #9e3e38; font-size: 11.5px; }
+.snapshot-table { margin-top: 14px; }.snapshot-table code { font-size: 10.5px; color: #2c6757; }.snapshot-table small { display: block; color: #8a9692; }
+.metrics strong.danger { color: #9e3e38; }
+
+/* 缺陷快照 */
+.invalid-band { border: 1px solid #e0b4a8; background: #fdf3f0; padding: 10px 13px; margin: 12px 0; color: #8a352c; font-size: 12px; border-radius: 3px; }.invalid-band ul { margin: 6px 0 0; padding-left: 20px; }.invalid-band li { margin: 3px 0; }
+.snapshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }.snapshot-grid > div > span { font-size: 11px; color: #758480; display: block; margin-bottom: 6px; }
+.cert-ref, .retest-ref { display: grid; grid-template-columns: 76px 1fr; gap: 2px 8px; background: #f5f8f7; padding: 7px 9px; border-radius: 3px; margin-bottom: 5px; font-size: 11px; align-items: center; }.cert-ref strong, .retest-ref strong { grid-column: 2; }.cert-ref small, .retest-ref small { grid-column: 2; color: #758480; }
