@@ -15,11 +15,11 @@ onMounted(() => store.hydrate())
       <div class="brand"><b>光</b><div><strong>并网验收工作台</strong><small>设备、测试、证书与缺陷闭环</small></div></div>
       <nav>
         <NuxtLink to="/"><span>验收总览</span><small>{{ store.stats.total }}项</small></NuxtLink>
-        <NuxtLink to="/equipment"><span>设备与测试</span><small>设备树</small></NuxtLink>
-        <NuxtLink to="/defects"><span>缺陷闭环</span><small>{{ store.stats.openDefects }}项</small></NuxtLink>
-        <NuxtLink to="/audit"><span>签署与审计</span><small>V{{ store.plant.version }}</small></NuxtLink>
+        <NuxtLink to="/equipment"><span>设备与测试</span><small>双端合并</small></NuxtLink>
+        <NuxtLink to="/defects"><span>缺陷闭环</span><small>{{ store.stats.staleDefects }}待核/{{ store.stats.openDefects }}未闭</small></NuxtLink>
+        <NuxtLink to="/audit"><span>签署与审计</span><small>{{ store.validSnapshot ? `V${store.validSnapshot.signVersion}已锁` : '未签署' }}</small></NuxtLink>
       </nav>
-      <div class="aside-state"><span>并网前完整性检查</span><strong>{{ store.preflight.allowed ? '允许申请复核' : `${store.preflight.blocking.length}项阻断` }}</strong><small>{{ store.plant.name }}</small></div>
+      <div class="aside-state"><span>并网前完整性检查</span><strong>{{ store.preflight.allowed ? '允许申请复核' : `${store.preflight.blocking.length}项阻断` }}</strong><small>{{ store.plant.name }}</small><small :class="store.chainValid ? 'chain-ok' : 'chain-bad'">{{ store.chainValid ? '复核哈希链正常' : '复核哈希链异常' }}</small></div>
     </aside>
     <main>
       <header class="top"><div><span>电站工程中心 / 验收与交付</span><h1>{{ title }}</h1></div><div class="top-user"><small>验收负责人</small><strong>陆川</strong></div></header>
